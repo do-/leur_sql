@@ -1,0 +1,20 @@
+.dx-datagrid .dx-row > td {
+  padding-top: 5px;
+  padding-bottom: 4px;
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.dx-datagrid .dx-datagrid-content .dx-datagrid-table .dx-row > td.dx-cell-modified:not(.dx-field-item-content):not(.dx-validation-pending):first-of-type, .dx-datagrid .dx-datagrid-content .dx-datagrid-table .dx-row > td.dx-datagrid-invalid:not(.dx-field-item-content):not(.dx-validation-pending):not(.dx-datagrid-select-all):first-of-type, .dx-datagrid .dx-datagrid-content .dx-datagrid-table .dx-row > td:not(.dx-validation-pending):not(.dx-datagrid-select-all):first-of-type {
+    padding-left: 3px;
+}
+
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+/*    
+    line-height: 16px;
+    font-weight: 500;
+    font-size: 12px;
+*/    
+}
