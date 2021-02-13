@@ -19,8 +19,8 @@
       :close-on-outside-click="drawerOptions.closeOnOutsideClick"
     >
     
-    <div style="height:100%;display:flex;flex-direction: column;">
-	    <h2 class="content-block">{{header}}</h2>
+    <div class="layout-main">
+	    <h2>{{header}}</h2>
 		<slot />
         <slot name="footer" />
     </div>
@@ -140,6 +140,17 @@ export default {
 .layout-body {
   flex: 1;
   min-height: 0;
+}
+
+.layout-main {
+	height:100%;
+	display:flex;
+	flex-direction: column;
+	&>h2 {
+		margin: 0;
+		padding: 5px 0 5px 20px;
+		font-size: 16pt;
+	}
 }
 
 .content {
