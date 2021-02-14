@@ -29,6 +29,12 @@ import {
   computed
 } from "vue";
 
+window.darn = function (x) {
+	console.log (x)
+	return x
+}
+
+
 function getScreenSizeInfo() {
   const screenSizes = sizes();
 

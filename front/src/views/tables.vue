@@ -13,9 +13,13 @@
       :show-borders="false"
       :show-column-lines="true"
       :show-row-lines="false"
+      
+      @toolbar-preparing="onToolbarPreparing"
 
     >
 
+      <dx-export :enabled="true" />
+        
       <dx-pager :visible="true" :show-info="true" :show-navigation-buttons="false" />
       <dx-paging :page-size="100" />
       <dx-scrolling mode="virtual" row-rendering-mode="virtual" />
@@ -41,7 +45,8 @@ import DxDataGrid, {
   DxLookup,
   DxPager,
   DxPaging,
-  DxScrolling
+  DxScrolling,
+  DxExport
 } from "devextreme-vue/data-grid"
 
 export default {
@@ -52,8 +57,15 @@ export default {
     }
   },
   
+  methods: {
+	onToolbarPreparing (e) {
+darn (e)
+	}
+  },
+  
   components: {
     DxDataGrid,
+    DxExport,
     DxColumn,
     DxFilterRow,
     DxLookup,
