@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import "./h4xx";
 import AppFooter from "./components/app-footer";
 import { sizes, subscribe, unsubscribe } from "./utils/media-query";
 import {
@@ -28,12 +29,6 @@ import {
   onBeforeUnmount,
   computed
 } from "vue";
-
-window.darn = function (x) {
-	console.log (x)
-	return x
-}
-
 
 function getScreenSizeInfo() {
   const screenSizes = sizes();
