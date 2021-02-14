@@ -1,25 +1,22 @@
 <template>
-  <div style="display:flex">
-<!--
-    <h2 class="content-block">Таблицы</h2>
--->
+
     <dx-data-grid
-      class="dx-card wide-card"
+
+      :data-source="src"
+
+      :row-alternation-enabled="true"
+      :focused-row-enabled="true"
+
+      :column-auto-width="true"
       :allow-column-resizing="true"
-      :data-source="dataSourceConfig"
-      :focused-row-index="0"
+
       :show-borders="false"
       :show-column-lines="true"
       :show-row-lines="false"
-      :row-alternation-enabled="true"
-      :focused-row-enabled="true"
-      :column-auto-width="true"
-      :column-hiding-enabled="false"
-      :width="'100%'"
-      :height="'100%'"
+
     >
 
-      <dx-pager :visible="'true'" :show-info="true" :show-navigation-buttons="0" />
+      <dx-pager :visible="true" :show-info="true" :show-navigation-buttons="false" />
       <dx-paging :page-size="100" />
       <dx-scrolling mode="virtual" row-rendering-mode="virtual" />
 
@@ -32,11 +29,12 @@
 
     </dx-data-grid>
 
-  </div>
 </template>
 
 <script>
-import "devextreme/data/odata/store";
+
+import "devextreme/data/odata/store"
+
 import DxDataGrid, {
   DxColumn,
   DxFilterRow,
@@ -44,21 +42,16 @@ import DxDataGrid, {
   DxPager,
   DxPaging,
   DxScrolling
-} from "devextreme-vue/data-grid";
+} from "devextreme-vue/data-grid"
 
 export default {
-  setup() {
-    const dataSourceConfig = {
-      store: {
-        type: "odata",
-        key: "id",
-        url: "/_back/tables"
-      },
-    };
+
+  setup () {
     return {
-      dataSourceConfig,      
-    };
+		src: {store: {url: "/_back/tables", type: "odata", key: "id"}}
+    }
   },
+  
   components: {
     DxDataGrid,
     DxColumn,
@@ -68,5 +61,7 @@ export default {
     DxPaging,
     DxScrolling
   }
-};
+  
+}
+
 </script>
