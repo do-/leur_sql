@@ -20,6 +20,8 @@
 		  :show-row-lines="false"
 
 		>
+		
+		  <dx-filter-panel :visible="true" />
 
 		  <dx-export :enabled="true" />
 
@@ -29,7 +31,12 @@
 
 		  <dx-filter-row :visible="true" />
 
-			<dx-column data-field="label" caption="Имя" />
+			<dx-column data-field="label" caption="ФИО" />
+			<dx-column data-field="login" caption="Login" />
+			<dx-column data-field="id_role" caption="Роль">
+				<dx-lookup :data-source="roles" value-expr="id" display-expr="label" />				
+			</dx-column>
+			<dx-column data-field="mail" caption="E-mail" />
 
 		</dx-data-grid>
 
@@ -50,7 +57,8 @@ import DxDataGrid, {
   DxPager,
   DxPaging,
   DxScrolling,
-  DxExport
+  DxExport,
+  DxFilterPanel
 } from "devextreme-vue/data-grid"
 
 import {ref} from "vue";
@@ -62,6 +70,10 @@ export default {
   data () {
 	return {
 		src: {store: {url: "/_back/users", type: "odata", key: "uuid", version: 4}},
+		roles: [
+			{id: 1, label: 'Администратор'},
+			{id: 2, label: 'Пользователь'},
+		]
     }    
   },
 
@@ -71,6 +83,7 @@ export default {
   components: {
     DxDataGrid,
     DxExport,
+    DxFilterPanel,
     DxColumn,
     DxFilterRow,
     DxLookup,
