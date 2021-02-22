@@ -36,6 +36,18 @@ const router = new createRouter({
       },
       component: Profile
     },
+    
+    {
+      path: '/user/:uuisd',
+      name: 'user',
+      meta: {
+        requiresAuth: true,
+        layout: defaultLayout
+      },
+      component: Profile
+//      component: User
+    },
+    
     {
       path: "/tasks",
       name: "tasks",

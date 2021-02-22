@@ -30,6 +30,9 @@
 				<dx-lookup :data-source="roles.data" value-expr="id" display-expr="label" />				
 			</dx-column>
 			<dx-column data-field="mail" caption="E-mail" />
+			<dx-column type="buttons">
+				<dx-button name="open" text="..." @click="go" />				
+			</dx-column>
 
 		</dx-data-grid>
 </template>
@@ -45,28 +48,32 @@ import DxDataGrid, {
   DxPager,
   DxPaging,
   DxScrolling,
-  DxExport,
+  DxButton,
   DxFilterPanel
 } from "devextreme-vue/data-grid"
 
-import {ref} from "vue";
+import {ref} from "vue"
+import {useRouter} from 'vue-router'
 import roles from '../../../back/lib/Model/roles.js';
 
 export default {
 
+
   data () {
 	return {
+		router: useRouter (),
 		src: {store: {url: "/_back/users", type: "odata", key: "uuid", version: 4}},
 		roles,
     }    
   },
-
-  created () {  
+  
+  methods: {
+	  go: function (e) {this.router.push ('/user/' + e.row.data.uuid)},
   },
 
   components: {
     DxDataGrid,
-    DxExport,
+    DxButton,
     DxFilterPanel,
     DxColumn,
     DxFilterRow,
