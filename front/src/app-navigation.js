@@ -16,10 +16,26 @@ export default [
         text: "Tasks",
         path: "/tasks"
       },
+    ]
+  },
+  {
+    text: "БД",
+    icon: "folder",
+    items: [
       {
         text: "Таблицы",
         path: "/tables"
       }
     ]
-  }
-  ];
+  },
+  {
+    text: "Администрирование",
+    icon: "folder",
+    items: [
+      {
+        text: "Пользователи",
+        path: "/users"
+      }
+    ]
+  },
+];

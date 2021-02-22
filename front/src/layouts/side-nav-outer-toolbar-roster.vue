@@ -54,7 +54,7 @@ export default {
   setup(props) {
     const route = useRoute();
 
-    const scrollViewRef = ref(null);
+//    const scrollViewRef = ref(null);
     const menuOpened = ref(props.isLarge);
     const menuTemporaryOpened = ref(false);
 
@@ -102,7 +102,7 @@ export default {
           menuOpened.value = false;
           menuTemporaryOpened.value = false;
         }
-      scrollViewRef.value.instance.scrollTo(0);
+//      scrollViewRef.value.instance.scrollTo(0);
       }
     );
 
@@ -113,7 +113,7 @@ export default {
       toggleMenu,
       handleSideBarClick,
       drawerOptions,
-      scrollViewRef
+//      scrollViewRef
     };
   },
   components: {

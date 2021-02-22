@@ -65,7 +65,7 @@ export default {
   data () {
 	return {
 		selected_databases: {},
-		src: {store: {url: "/_back/tables", type: "odata", key: "id",		
+		src: {store: {url: "/_back/tables", type: "odata", key: "id", version: 4,
 			beforeSend: e => e.params.pre = Object.keys (this.selected_databases).join ('|')
 		}},
     }    
@@ -77,9 +77,9 @@ export default {
 			
 		let {src} = await response ({type: 'tables', part: 'vocs'})
 			
-		this.onToolbarPreparing = e => {
-		
-			this.selected_databases [src [0].id] = true
+		this.selected_databases [src [0].id] = true
+
+		this.onToolbarPreparing = e => {		
 			
 			for (let {id, label, value} of src) e.toolbarOptions.items.push ({
                 widget: 'dxCheckBox',

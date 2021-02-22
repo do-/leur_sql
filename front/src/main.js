@@ -11,6 +11,8 @@ import appInfo from "./app-info";
 
 import {Promised} from 'vue-promised' 
 
+import config from "devextreme/core/config"; config ({oDataFilterToLower: false})
+
 const app = createApp(App)
 app.use(router)
 app.component ('Promised', Promised)
