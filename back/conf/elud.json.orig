@@ -1,0 +1,28 @@
+{
+
+        "listen": {
+                "host"    : "127.0.0.1",
+                "port"    : 8003
+        },
+
+        "db": {
+                "_connectionString": "sqlite3://../db/test.db",
+                "connectionString": "postgresql://tmp:XXXXXX@localhost:5432/tmp"
+        },
+
+        "auth": {
+                "allow_test_admin": 1,
+                "sessions": {
+                	"timeout": 30, 
+                	"memcached": [	
+                		"127.0.0.1:11211", 
+                		{
+                			"timeout": 100,
+                			"retries": 1
+                		}
+                	]
+                },
+                "salt_file": "/etc/tasks.salt"
+        }
+
+}

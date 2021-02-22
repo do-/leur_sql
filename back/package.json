@@ -1,0 +1,20 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "content-disposition": "^0.5.3",
+    "generic-pool": "^3.7.1",
+    "jsonwebtoken": "^8.5.1",
+    "memcached": "^2.2.2",
+    "mssql": "^6.2.3",
+    "mysql": "^2.18.1",
+    "pg": "^7.0.0",
+    "pg-copy-streams": "^5.1.1",
+    "pg-query-stream": "^3.2.3",
+    "sqlite3": "^4.1.0"
+  }
+}
