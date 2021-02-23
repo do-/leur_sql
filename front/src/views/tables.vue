@@ -2,7 +2,11 @@
 
 	<Promised :promise="data">
 
-<template v-slot="data">
+    <template v-slot:pending>
+    	...
+    </template>
+    
+    <template v-slot="data">
 
 		<dx-data-grid
 
@@ -55,10 +59,6 @@ import DxDataGrid, {
   DxScrolling,
   DxExport
 } from "devextreme-vue/data-grid"
-
-import {ref} from "vue";
-
-import {usePromise} from 'vue-promised'
 
 export default {
 

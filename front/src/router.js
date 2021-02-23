@@ -7,6 +7,7 @@ import Tasks from "./views/tasks";
 
 import Tables from "./views/tables";
 import Users from "./views/users";
+import User from "./views/user";
 
 import defaultLayout from "./layouts/side-nav-outer-toolbar";
 import rosterLayout from "./layouts/side-nav-outer-toolbar-roster";
@@ -38,14 +39,13 @@ const router = new createRouter({
     },
     
     {
-      path: '/user/:uuisd',
+      path: '/user/:id',
       name: 'user',
       meta: {
         requiresAuth: true,
         layout: defaultLayout
       },
-      component: Profile
-//      component: User
+      component: User
     },
     
     {
