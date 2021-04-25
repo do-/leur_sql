@@ -15,7 +15,11 @@
 				id="form"
 				label-location="top"
 				:form-data="data"
+				:activeStateEnabled="true"
+				:hoverStateEnabled="true"
 				:colCountByScreen="colCountByScreen"
+				:disabled="disabled"
+				@fieldDataChanged="update"
 			  >
 
 				<dx-item data-field="label" />
@@ -51,6 +55,7 @@ export default {
 
     return {
       data: {},
+      disabled: false,
       route: useRoute (),
       colCountByScreen
     };
@@ -65,6 +70,20 @@ export default {
   components: {
     DxForm,
     DxItem,
+  },
+  
+  methods: {
+  
+  	update: async function (e) {
+  	
+	  	let {id} = this.route.params
+  		let {dataField, value} = e
+  		this.disabled = true
+  		await response ({type: 'users', id, action: 'update'}, {data: {[dataField]: value}})
+  		this.disabled = false
+  	
+  	}
+  
   }
   
 };

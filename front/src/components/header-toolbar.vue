@@ -76,11 +76,14 @@ export default {
     const email = ref("");
     auth.getUser().then((e) => email.value = e.data.email);
     
-    const userMenuItems = [{
+    const userMenuItems = [
+/*    
+      {
         text: "Profile",
         icon: "user",
         onClick: onProfileClick
       },
+*/
       {
         text: "Logout",
         icon: "runner",
